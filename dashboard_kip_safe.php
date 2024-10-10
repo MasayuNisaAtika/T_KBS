@@ -10,7 +10,7 @@
 $jumlah_form_kondisi = mysqli_num_rows($form_kondisi);
 $jumlah_kondisi_barang = mysqli_num_rows($kondisi_barang);
 
-$sql = "SELECT no, nama_obat, jumlah_penggunaan FROM t_penggunaan_obat";
+$sql = "SELECT no, nama_obat, jumlah_penggunaan FROM m_penggunaan_obat";
     $query = mysqli_query($koneksi, $sql); 
 
     if (isset($_GET['op'])) {
@@ -21,11 +21,11 @@ $sql = "SELECT no, nama_obat, jumlah_penggunaan FROM t_penggunaan_obat";
     
     if ($op == 'edit') {
         $id         = $_GET['id'];
-        $sql       = "select * from t_penggunaan_obat where no = '$id'";
+        $sql       = "select * from m_penggunaan_obat where no = '$id'";
         $q1         = mysqli_query($koneksi, $sql);
         $r1         = mysqli_fetch_array($q1);
-        $id        = $r1['kode_produk'];
-        $nama       = $r1['nama_produk'];
+        $id        = $r1['no'];
+        $nama       = $r1['nama_obat'];
         $no      = $row['no'];
         $nama    = $row['nama_obat'];
         $jumlah  = $row['jumlah_penggunaan'];
@@ -88,7 +88,7 @@ $sql = "SELECT no, nama_obat, jumlah_penggunaan FROM t_penggunaan_obat";
     
                 <tbody id="medicationUsageTable">
                 <?php 
-                    $sql   = "select * from t_penggunaan_obat order by no desc";
+                    $sql   = "select * from m_penggunaan_obat order by no desc";
                     $q2     = mysqli_query($koneksi, $sql);
                     $urut   = 1;
                     while($row = mysqli_fetch_assoc($query)) {

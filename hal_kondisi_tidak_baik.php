@@ -2,7 +2,7 @@
     include 'index.php';
     include 'koneksi.php';
 
-    $sql = "SELECT id_mkondisi_barang, nama_kondisi, created_at FROM m_kondisi_barang";
+    $sql = "SELECT id, nama, created_at FROM m_kondisi_barang";
     $query = mysqli_query($koneksi, $sql); 
 ?>
 
@@ -23,8 +23,8 @@
                     <tbody>
                         <?php while($row = mysqli_fetch_assoc($query)) : ?>
                             <tr class="hover:bg-gray-100">
-                                <td class="py-2 px-4 border-b"><?php echo $row['id_mkondisi_barang']; ?></td>
-                                <td class="py-2 px-4 border-b"><?php echo $row['nama_kondisi']; ?></td>
+                                <td class="py-2 px-4 border-b"><?php echo $row['id']; ?></td>
+                                <td class="py-2 px-4 border-b"><?php echo $row['nama']; ?></td>
                                 <td class="py-2 px-4 border-b"><?php echo $row['created_at']; ?></td>
                             </tr>
                         <?php endwhile; ?> 

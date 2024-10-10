@@ -2,7 +2,7 @@
     include 'index.php';
     include 'koneksi.php';
 
-    $sql = "SELECT id_t_form_kondisi, id_mform, id_mkondisi_barang, id_mkategori, created_at FROM t_form_kondisi";
+    $sql = "SELECT id, m_form_id, m_kondisi_barang_id, m_kategori_id, created_at FROM t_form_kondisi";
     $query = mysqli_query($koneksi, $sql); 
 ?>
 
@@ -25,10 +25,10 @@
                     <tbody>
                         <?php while($row = mysqli_fetch_assoc($query)) : ?>
                             <tr class="hover:bg-gray-100">
-                                <td class="py-2 px-4 border-b"><?php echo $row['id_t_form_kondisi']; ?></td>
-                                <td class="py-2 px-4 border-b"><?php echo $row['id_mform']; ?></td>
-                                <td class="py-2 px-4 border-b"><?php echo $row['id_mkondisi_barang']; ?></td>
-                                <td class="py-2 px-4 border-b"><?php echo $row['id_mkategori']; ?></td>
+                                <td class="py-2 px-4 border-b"><?php echo $row['id']; ?></td>
+                                <td class="py-2 px-4 border-b"><?php echo $row['m_form_id']; ?></td>
+                                <td class="py-2 px-4 border-b"><?php echo $row['m_kondisi_barang_id']; ?></td>
+                                <td class="py-2 px-4 border-b"><?php echo $row['m_kategori_id']; ?></td>
                                 <td class="py-2 px-4 border-b"><?php echo $row['created_at']; ?></td>
                             </tr>
                         <?php endwhile; ?> 
