@@ -1,5 +1,5 @@
 <?php
-    include 'index.php';
+    include 'home.php';
     include 'koneksi.php';
 
     $sql = "SELECT id, nama, created_at FROM m_kondisi_barang";

@@ -1,5 +1,5 @@
 <?php
-    include 'index.php';
+    include 'home.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -1,5 +1,5 @@
 <?php
-    include 'index.php';
+    include 'home.php';
     include 'koneksi.php';
 
     $sql = "SELECT id, m_form_id, m_kondisi_barang_id, m_kategori_id, created_at FROM t_form_kondisi";

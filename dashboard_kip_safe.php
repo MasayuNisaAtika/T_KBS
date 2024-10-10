@@ -1,7 +1,7 @@
 <?php
 
     include 'koneksi.php';
-    include 'index.php';
+    include 'home.php';
 
     $form_kondisi = mysqli_query($koneksi,"SELECT * FROM t_form_kondisi");
     $kondisi_barang= mysqli_query($koneksi,"SELECT * FROM m_kondisi_barang");
