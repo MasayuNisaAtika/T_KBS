@@ -10,7 +10,7 @@
 $jumlah_form_kondisi = mysqli_num_rows($form_kondisi);
 $jumlah_kondisi_barang = mysqli_num_rows($kondisi_barang);
 
-$sql = "SELECT no, nama_obat, jumlah_penggunaan FROM m_penggunaan_obat";
+$sql = "SELECT id, nama_obat, jumlah_penggunaan FROM m_penggunaan_obat";
     $query = mysqli_query($koneksi, $sql); 
 
     if (isset($_GET['op'])) {
@@ -21,12 +21,12 @@ $sql = "SELECT no, nama_obat, jumlah_penggunaan FROM m_penggunaan_obat";
     
     if ($op == 'edit') {
         $id         = $_GET['id'];
-        $sql       = "select * from m_penggunaan_obat where no = '$id'";
+        $sql       = "select * from m_penggunaan_obat where id = '$id'";
         $q1         = mysqli_query($koneksi, $sql);
         $r1         = mysqli_fetch_array($q1);
-        $id        = $r1['no'];
+        $id        = $r1['id'];
         $nama       = $r1['nama_obat'];
-        $no      = $row['no'];
+        $id      = $row['id'];
         $nama    = $row['nama_obat'];
         $jumlah  = $row['jumlah_penggunaan'];
     
@@ -92,13 +92,13 @@ $sql = "SELECT no, nama_obat, jumlah_penggunaan FROM m_penggunaan_obat";
                     $q2     = mysqli_query($koneksi, $sql);
                     $urut   = 1;
                     while($row = mysqli_fetch_assoc($query)) {
-                        $no      = $row['no'];
+                        $id      = $row['id'];
                         $nama    = $row['nama_obat'];
                         $jumlah  = $row['jumlah_penggunaan'];
                     ?>
                         
                         <tr>  
-                        <td><?php echo $row['no']?></td>
+                        <td><?php echo $row['id']?></td>
                         <td><?php echo $row['nama_obat']?></td>
                         <td><?php echo $row['jumlah_penggunaan']?></td>
                         <td class="py-2 px-4 text-left">
